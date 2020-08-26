@@ -35,7 +35,7 @@ class _registerState extends State<register> {
         appBar: AppBar(
           backgroundColor: Colors.red,
           elevation: 0.0,
-          title: Text('Register to Brew Crew'),
+          title: Text('Register to Together'),
           actions: <Widget>[
             FlatButton.icon(
               label: Text('Sign In'),

@@ -1,5 +1,6 @@
 import 'package:brewcrew/models/user.dart';
 import 'package:brewcrew/screens/home.dart';
+import 'package:brewcrew/services/auth.dart';
 import 'package:brewcrew/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,7 @@ class settingsform extends StatefulWidget {
 }
 
 class _settingsformState extends State<settingsform> {
+  final AuthService _auth =AuthService();
   @override
 
    String group;
@@ -40,13 +42,8 @@ class _settingsformState extends State<settingsform> {
             UserData userData = snapshot.data;
             return Form(
               key: _formKey,
-              child: Column(
+               child: Column(
                 children: <Widget>[
-                  Text(
-                    'Settinggs for group - ${userData.groupid}',
-                    style: TextStyle(fontSize: 18.0),
-                  ),
-                  SizedBox(height: 20.0),
                   TextFormField(
                     initialValue: userData.name,
                       decoration: InputDecoration(labelText: 'Name' , enabledBorder: OutlineInputBorder(
@@ -133,6 +130,20 @@ class _settingsformState extends State<settingsform> {
                           Navigator.pop(context);
                         }
                       }
+                  ),
+                  SizedBox(height: 10.0,),
+                  RaisedButton(
+                      color: Colors.pink[400],
+                      child: Text(
+                        'delete',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () async {
+                        await DatabaseService(uid: userData.uid).deleteuserdata();
+                           _auth.signout();
+
+                        }
+
                   ),
 
                 ],

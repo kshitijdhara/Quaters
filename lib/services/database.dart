@@ -35,6 +35,10 @@ class DatabaseService {
 
   }
 
+  Future<void> deleteuserdata() async{
+    return await Firestore.instance.collection(groupi).document(uid).delete();
+  }
+
   // brew list from snapshot
   List<Brew> _brewListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
