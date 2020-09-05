@@ -139,6 +139,7 @@ class _settingsformState extends State<settingsform> {
                         style: TextStyle(color: Colors.white),
                       ),
                       onPressed: () async {
+                        Navigator.pop(context);
                         await DatabaseService(uid: userData.uid).deleteuserdata();
                            _auth.signout();
 
