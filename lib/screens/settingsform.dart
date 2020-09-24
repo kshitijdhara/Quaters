@@ -28,7 +28,7 @@ class _settingsformState extends State<settingsform> {
   String _currentSugars;
   int _currentStrength;
   String currentgroup;
-  String currentspirit='vodka';
+  String currentspirit;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class _settingsformState extends State<settingsform> {
                   SizedBox(height: 20.0,),
                   DropdownButtonFormField(
                     value: _currentSugars ?? userData.sugars,
-                    decoration: InputDecoration(labelText: 'Alchol ' , enabledBorder: OutlineInputBorder(
+                    decoration: InputDecoration(labelText: 'Alcohol ' , enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.pinkAccent,width: 2.0)
                     )),
                     items: sugars.map((sugar) {
@@ -105,7 +105,7 @@ class _settingsformState extends State<settingsform> {
                     textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
                       Text(
-                        currentspirit,
+                        currentspirit ?? userData.spirit,
                         style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w900),
                       ),
 

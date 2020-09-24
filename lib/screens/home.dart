@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('Together'),
+          title: Text('Quaters'),
           backgroundColor: Colors.red,
           elevation: 0.0,
           actions: <Widget>[

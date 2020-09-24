@@ -38,7 +38,7 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         elevation: 0.0,
-        title: Text('Sign in to Together'),
+        title: Text('Sign in to Quaters'),
         actions: <Widget>[
           FlatButton.icon(
             icon: Icon(Icons.swap_horizontal_circle),
